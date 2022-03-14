@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Данные с датчиков
+{% endblock %}
+
+{% block body%}
+<div class="container mt-5">
+    <h1>Данные с датчиков</h1>
+    {% for el in article %}
+    <div class="alert alert-info">
+        <h2>{{ el.date.date() }}</h2>
+        <p><b>Cтатус: {{ el.status }}</b></p>
+        <p><b>Температура: {{ el.temp }}</b></p>
+        <p><b>Влажность в процентах: {{ el.vlag }}</b></p>
+        <p><b>Уровень воды в мл: {{ el.UrV }}</b></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
